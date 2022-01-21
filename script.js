@@ -1,3 +1,4 @@
+var DATA = 
 $(document).ready(function(){
     $.getJSON("optic boukkour.json", function(data){
         var myData = '';
@@ -27,20 +28,22 @@ $(document).ready(function(){
       });
     });
   });
-  
+
 function sort(e, direction){
-    if(direction == desc){
-        myData.sort(function(a,b){
+    if(direction == "desc"){
+        data.sort(function(a,b){
             if(a[e] > b[e]){
                 return -1
             }
         })
     }
-    else if(direction == asc){
-        myData.sort(function(a,b){
-            if(a[e] > b[e]){
+    else if(direction == "asc"){
+        data.sort(function(a,b){
+            if(a[e] < b[e]){
                 return -1  
     }
 })
 }
+$("#tbody").html("");
+fill(data);
 }
